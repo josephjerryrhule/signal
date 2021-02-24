@@ -57,7 +57,9 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white",
   },
-  inputContainer: {},
+  inputContainer: {
+    width: 200,
+  },
   button: {
     width: 200,
     marginTop: 10,
