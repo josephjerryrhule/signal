@@ -10,7 +10,6 @@ const LoginScreen = ({ navigation }) => {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      console.log(authUser);
       if (authUser) {
         navigation.replace("Home");
       }
@@ -33,7 +32,7 @@ const LoginScreen = ({ navigation }) => {
           uri:
             "https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
         }}
-        style={{ width: 200, height: 200 }}
+        style={{ width: 100, height: 100 }}
       />
       <View style={styles.inputContainer}>
         <Input

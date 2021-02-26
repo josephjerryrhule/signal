@@ -1,17 +1,10 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, View, SafeAreaView, TouchableOpacity } from "react-native";
 import { Avatar } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
 import CustomListItem from "../components/CustomListItem";
 import { auth, db } from "../firebase";
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
-import { StatusBar } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
@@ -21,19 +14,6 @@ const HomeScreen = ({ navigation }) => {
       navigation.replace("Login");
     });
   };
-
-  useEffect(() => {
-    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
-      setChats(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
-
-    return unsubscribe;
-  }, []);
 
   useLayoutEffect(() => {
     return () => {
@@ -72,6 +52,19 @@ const HomeScreen = ({ navigation }) => {
       });
     };
   }, [navigation]);
+
+  useEffect(() => {
+    const unsubscribe = db.collection("chats").onSnapshot((snapshot) =>
+      setChats(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+
+    return unsubscribe;
+  }, []);
 
   const enterChat = (id, chatName) => {
     navigation.navigate("Chat", {
