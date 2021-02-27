@@ -13,7 +13,7 @@ import * as firebase from "firebase";
 
 const ChatScreen = ({ navigation, route }) => {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState("");
+  const [messages, setMessages] = useState([]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
