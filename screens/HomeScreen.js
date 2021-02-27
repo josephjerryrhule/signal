@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
   useLayoutEffect(() => {
     return () => {
       navigation.setOptions({
-        title: "Signal",
+        title: "Signal Clone",
         headerStyle: { backgroundcolor: "#fff" },
         headerTitleStyle: { color: "black" },
         headerTintColor: "black",
@@ -64,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
     );
 
     return unsubscribe;
-  }, []);
+  });
 
   const enterChat = (id, chatName) => {
     navigation.navigate("Chat", {

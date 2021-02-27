@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
     });
 
     return unsubscribe;
-  }, [navigation]);
+  });
 
   const signIn = () => {
     auth

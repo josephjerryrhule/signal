@@ -8,7 +8,7 @@ const AddChatScreen = ({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "Add a mew Chat",
+      title: "Add a new Chat",
       headerBackTitle: "Chats",
     });
   }, [navigation]);
@@ -37,7 +37,7 @@ const AddChatScreen = ({ navigation }) => {
         }
       />
 
-      <Button onPress={createChat} title="Create new Chat" />
+      <Button disabled={!input} onPress={createChat} title="Create new Chat" />
     </View>
   );
 };
