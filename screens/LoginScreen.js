@@ -26,7 +26,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
       <Image
         source={{
           uri:
